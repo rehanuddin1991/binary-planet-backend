@@ -4,7 +4,14 @@ require('dotenv').config()
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-app.use(cors());
+ 
+
+app.use(cors({
+  
+  origin: 'https://binary-planet.netlify.app',
+  //origin: 'http://localhost:5173',
+  credentials: true
+}));
 app.use(express.json());
 const { MongoClient, ObjectId } = require('mongodb');
 //const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_SECRET}@cluster0.grsue.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
