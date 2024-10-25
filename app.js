@@ -295,6 +295,13 @@ async function run() {
 }
 run().catch(console.dir);
 
-app.listen(PORT, () => {
+app.listen(3000, () => {
   console.log(`server is Running on ${PORT}`);
 });
+
+
+app.get('/', (req, res) => {
+    res.send('Hello from Express!');
+});
+
+module.exports = app;
