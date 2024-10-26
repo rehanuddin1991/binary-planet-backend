@@ -3,7 +3,7 @@ const cors = require("cors");
 require('dotenv').config()
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
  
 
 app.use(cors({
@@ -295,13 +295,13 @@ async function run() {
 }
 run().catch(console.dir);
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log(`server is Running on ${PORT}`);
 });
 
 
 app.get('/', (req, res) => {
-    res.send('Hello from Express!');
+    res.send(`Congratulations, You are connected on ${PORT} port`);
 });
 
 module.exports = app;
